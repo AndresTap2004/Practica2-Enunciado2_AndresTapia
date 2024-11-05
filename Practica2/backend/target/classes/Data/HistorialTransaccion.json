@@ -1,0 +1,27 @@
+[
+    {
+        "historialTransaccion": 1,
+        "idFamilia": 2,
+        "idGenerador": 3
+    },
+    {
+        "historialTransaccion": 2,
+        "idFamilia": 3,
+        "idGenerador": 3
+    },
+    {
+        "historialTransaccion": 3,
+        "idFamilia": 1,
+        "idGenerador": 1
+    },
+    {
+        "historialTransaccion": 4,
+        "idFamilia": 4,
+        "idGenerador": 5
+    },
+    {
+        "historialTransaccion": 5,
+        "idFamilia": 5,
+        "idGenerador": 5
+    }
+]

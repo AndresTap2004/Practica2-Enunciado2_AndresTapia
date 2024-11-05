@@ -1,0 +1,50 @@
+[
+    {
+        "idGenerador": 1,
+        "nombre": "A212",
+        "costo": 200.0,
+        "consumoPorHora": 100.0,
+        "potencia": 200,
+        "uso": "Deportivo"
+    },
+    {
+        "idGenerador": 2,
+        "nombre": "A354",
+        "costo": 400.0,
+        "consumoPorHora": 100.0,
+        "potencia": 700,
+        "uso": "Familiar"
+    },
+    {
+        "idGenerador": 3,
+        "nombre": "Referes",
+        "costo": 1233.0,
+        "consumoPorHora": 1231.0,
+        "potencia": 121,
+        "uso": "Comercial"
+    },
+    {
+        "idGenerador": 4,
+        "nombre": "PowerSafe",
+        "costo": 1000.0,
+        "consumoPorHora": 100.0,
+        "potencia": 100,
+        "uso": "10012312"
+    },
+    {
+        "idGenerador": 5,
+        "nombre": "EcoPower",
+        "costo": 200.0,
+        "consumoPorHora": 2500.0,
+        "potencia": 3000,
+        "uso": "Energia de respaldo"
+    },
+    {
+        "idGenerador": 6,
+        "nombre": "Genplus",
+        "costo": 200.0,
+        "consumoPorHora": 2000.0,
+        "potencia": 3000,
+        "uso": "Suministro continuo"
+    }
+]

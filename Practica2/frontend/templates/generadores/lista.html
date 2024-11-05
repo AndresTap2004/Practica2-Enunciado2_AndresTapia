@@ -1,0 +1,47 @@
+{% extends 'template.html' %}
+
+{% block content %}
+<div class="container mx-auto mt-8 p-6 bg-gray-600 rounded-lg shadow-lg">
+    <h1 class="text-4xl font-extrabold text-white">Listado de Generadores</h1>
+    <div class="flex justify-end mb-3">
+        <a href="/generadores/register" class="bg-pink-500 text-white px-4 py-2 rounded-lg">Agregar Nuevo Generador</a>
+    </div>
+    
+    <table class="min-w-full bg-gray-800 rounded-lg shadow-md">
+        <thead class="bg-gray-900 text-white">
+            <tr>
+                <th class="text-center">Nro</th>
+                <th class="text-center">Nombre</th>
+                <th class="text-center">Costo</th>
+                <th class="text-center">Consumo por Hora</th>
+                <th class="text-center">Potencia</th>
+                <th class="text-center">Uso</th>
+                <th class="text-center">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if list %}
+                {% for item in list %}
+                <tr id="row-{{ item.idGenerador }}">
+                    <td class="text-center">{{ loop.index }}</td>
+                    <td class="text-center">{{ item.nombre }}</td> 
+                    <td class="text-center">${{ item.costo }}</td> <!-- Agregado el símbolo de dólar -->
+                    <td class="text-center">{{ item.consumoPorHora }} kWh</td> <!-- Agregado la unidad kWh -->
+                    <td class="text-center">{{ item.potencia }} W</td> <!-- Agregado la unidad W -->
+                    <td class="text-center">{{ item.uso }}</td>
+                    <td class="text-center">
+                        <a href="/generadores/edit/{{ item.idGenerador }}" class="bg-blue-600 text-white px-2 py-1 rounded-lg">Modificar</a>
+                        <button class="bg-red-600 text-white px-2 py-1 rounded-lg" onclick="eliminarGenerador({{ item.idGenerador }})">Eliminar</button>
+                    </td>
+                </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="7" class="text-center">No hay generadores registrados.</td> 
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

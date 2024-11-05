@@ -1,0 +1,39 @@
+{% extends 'template.html' %}
+
+{% block content %}
+<div class="container mx-auto mt-8 p-6 bg-gray-600 rounded-lg shadow-lg">
+    <h1 class="text-4xl font-extrabold text-white">Listado de Familias</h1>
+    <div class="flex justify-end mb-3">
+        <a href="/familias/register" class="bg-purple-600 text-white px-4 py-2 rounded-lg">Agregar Nueva Familia</a>
+    </div>
+    
+    <table class="min-w-full bg-gray-800 rounded-lg shadow-md">
+        <thead class="bg-gray-900 text-white">
+            <tr>
+                <th class="text-center">Nro</th>
+                <th class="text-center">Nombre</th>
+                <th class="text-center">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if list %}
+                {% for item in list %}
+                <tr class="text-center" id="row-{{ item.idFamilia }}">
+                    <td>{{ loop.index }}</td>
+                    <td>{{ item.nombre }}</td>
+                    <td>
+                        <a href="/familias/edit/{{ item.idFamilia }}" class="bg-blue-600 text-white px-2 py-1 rounded-lg">Modificar</a>
+                        <button class="bg-red-600 text-white px-2 py-1 rounded-lg" onclick="deleteRow({{ item.idFamilia }})">Eliminar</button>
+                    </td>
+                </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="3" class="text-center">No hay familias registradas.</td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
